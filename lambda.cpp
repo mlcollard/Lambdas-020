@@ -113,7 +113,7 @@ int main(int argc, char* argv[]) {
 
     // pass static method of a class
     {
-        std::function<int(std::string_view)> f;
+        std::function<int(std::string_view)> f = Application::applyApplication;
 
         if (f) {
             assert(framework.apply(f, "a") == 3);
