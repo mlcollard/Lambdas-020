@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
 
     // empty capture
     {
-        std::function<int(std::string_view)> f;
+        std::function<int(std::string_view)> f = [](std::string_view s) { return s.size() + 2; };
 
         if (f) {
             assert(framework.apply(f, "a") == 3);
